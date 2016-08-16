@@ -1,5 +1,4 @@
-# Jenkins APTLY repository management solution
-
+# Jenkins APTLY repository publisher plugin
 This plugin adds a publisher step to Jenkins, which allows you to publish
 debian artifacts to the local aptly repository. At the moment it requires that aptly
 repository were present on your Jenkins machine, with already published (in aptly terms)
