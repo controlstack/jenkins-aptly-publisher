@@ -27,7 +27,7 @@ class AptlyDslExtensionSpec extends Specification {
                     shell "fpm -s dir -t deb -n test -v 0.0.1 deb"
                 }
                 publishers {
-                    aptly "sample"
+                    publishToAptly "sample"
                 }
             }
             """

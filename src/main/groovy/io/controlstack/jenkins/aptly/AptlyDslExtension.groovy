@@ -11,7 +11,7 @@ import javaposse.jobdsl.plugin.ContextExtensionPoint
 class AptlyDslExtension extends ContextExtensionPoint {
 
     @DslExtensionMethod(context = PublisherContext.class)
-    public Object aptly(String repository) {
+    public Object publishToAptly(String repository) {
         return new AptlyPublisher(repository)
     }
 

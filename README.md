@@ -5,6 +5,19 @@ debian artifacts to the local aptly repository. At the moment it requires that a
 repository were present on your Jenkins machine, with already published (in aptly terms)
 repository.
 
+## Using with Jenkins Jobs DSL plugin
+
+APTLY repository plugin provides ability to configure publisher via Jenkins Job DSL:
+
+```
+job("myjob") {
+  ...
+  publishers {
+    archiveArtifacts "*.deb"
+    publishToAptly "aptly_repository"
+  }
+}
+```
 
 ## Testing 
 

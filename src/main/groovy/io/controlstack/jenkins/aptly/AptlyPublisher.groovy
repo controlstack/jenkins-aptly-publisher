@@ -42,14 +42,11 @@ class AptlyPublisher extends Recorder implements Serializable {
         }
 
         List<Run.Artifact> artifacts = build.getArtifacts()
-        System.out.println("WE HAVE ${artifacts}")
 
         artifacts?.each { artifact ->
-            System.out.println("ARTIFACT: ${artifact.getFile().getAbsolutePath()}")
             String path = artifact.getFile().getAbsolutePath()
-            String ext = FilenameUtils.getExtension(path)
 
-            if (ext == "deb") {
+            if (isDebianPackage(path)) {
                 aptly.addPackage(this.repository, path)
             }
         }
@@ -106,5 +103,9 @@ class AptlyPublisher extends Recorder implements Serializable {
 
     String getAptlyConfigPath() {
         this.aptlyConfigPath
+    }
+
+    private boolean isDebianPackage(String path) {
+        FilenameUtils.getExtension(path) == "deb"
     }
 }
