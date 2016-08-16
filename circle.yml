@@ -19,5 +19,5 @@ dependencies:
     - tar zxf aptly.tar.gz ; sudo mv aptly_0.9.7_linux_amd64/aptly /usr/local/bin/aptly ; sudo chmod +x /usr/local/bin/aptly
 test:
   override:
-    - gradle test
+    - ./gradlew test
 
