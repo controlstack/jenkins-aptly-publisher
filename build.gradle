@@ -10,9 +10,6 @@ buildscript {
         classpath 'org.jenkins-ci.tools:gradle-jpi-plugin:0.18.1'
         classpath 'org.jenkins-ci.plugins:job-dsl:1.48'
         classpath 'org.jenkins-ci.plugins:job-dsl-core:1.48'
-        // classpath 'org.jenkins-ci.plugins.workflow:workflow-step-api:2.3'
-        // classpath 'org.jenkins-ci.plugins:structs:1.3'
-        // classpath 'org.jenkins-ci.plugins:matrix-project:1.7'
     }
 }
 
@@ -39,8 +36,8 @@ targetCompatibility = 1.6
 jenkinsPlugin {
     coreVersion = '1.580.1'
     displayName = "Aptly publisher"
-    url = "http://wiki.jenkins-ci.org/display/JENKINS/aptly-plugin"
-    gitHubUrl = "https://github.com/controlstack/jenkins-aptly-plugin"
+    url = "http://wiki.jenkins-ci.org/display/JENKINS/aptly-publisher"
+    gitHubUrl = "https://github.com/controlstack/jenkins-aptly-publisher"
     shortName = "aptly-publisher"
 
     developers {
