@@ -15,9 +15,8 @@ machine:
 dependencies:
   pre:
     - gem install fpm
-    - curl -k -L -o aptly.tar.gz  https://bintray.com/artifact/download/smira/aptly/aptly_0.9.7_linux_amd64.tar.gz
-    - tar zxf aptly.tar.gz
-    - mv aptly /tmp/aptly && chown +x /tmp/aptly
+    - curl -k -L -o aptly.tar.gz  https://bintray.com/artifact/download/smira/aptly/aptly_0.9.7_linux_amd64.tar.gz ;
+    - tar zxf aptly.tar.gz ; sudo mv aptly_0.9.7_linux_amd64/aptly /usr/local/bin/aptly ; sudo chmod +x /usr/local/bin/aptly
 test:
   override:
     - gradle test
