@@ -1,0 +1,24 @@
+machine:
+  timezone:
+    UTC
+  environment:
+    PATH: /bin:/usr/bin:/tmp:/usr/local/bin
+
+  # Version of ruby to use
+  ruby:
+    version:
+      2.3.1
+  java:
+    version: openjdk7
+  hosts:
+    circlehost: 127.0.0.1
+dependencies:
+  pre:
+    - gem install fpm
+    - curl -k -L -o aptly.tar.gz  https://bintray.com/artifact/download/smira/aptly/aptly_0.9.7_linux_amd64.tar.gz
+    - tar zxf aptly.tar.gz
+    - mv aptly /tmp/aptly && chown +x /tmp/aptly
+test:
+  override:
+    - gradle test
+
