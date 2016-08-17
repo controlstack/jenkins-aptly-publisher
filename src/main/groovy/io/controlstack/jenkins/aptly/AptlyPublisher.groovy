@@ -57,6 +57,7 @@ class AptlyPublisher extends Recorder implements Serializable {
     @Override
     public boolean perform(AbstractBuild build, Launcher launcher, BuildListener listener) {
         perform(build, build.getWorkspace(), launcher, (TaskListener)listener)
+        true
     }
 
     @Override

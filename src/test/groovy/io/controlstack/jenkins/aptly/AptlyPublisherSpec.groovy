@@ -59,6 +59,7 @@ class AptlyPublisherSpec extends Specification {
             FreeStyleBuild build = project.scheduleBuild2(0).get()
 
         then:
+            build.getResult() == Result.SUCCESS
             def packages = aptly.getPackages("myrepo")
             packages.contains('test_0.0.1_amd64')
     }
